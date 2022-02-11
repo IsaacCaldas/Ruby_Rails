@@ -1,0 +1,18 @@
+source "https://rubygems.org"
+
+# gem 'cpf_utils'  / last version
+
+gem 'cpf_utils', '1.3.0' # exact version
+gem 'faker', '>=2.19.0' # not accept old versions, count from this version +
+gem 'lerolero_generator'
+
+# example: parcial version 
+/ 
+# between - 1.0.2 and 1.0.9 < 1.1
+gem 'faker', '~>1.0.2' 
+
+# or
+# between - 1.3 and 1.9 < 2.0   
+gem 'faker', '~>1.3'
+
+/

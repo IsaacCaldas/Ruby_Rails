@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    concurrent-ruby (1.1.9)
+    cpf_utils (1.3.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
+    i18n (1.9.1)
+      concurrent-ruby (~> 1.0)
+    lerolero_generator (1.0.1)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  cpf_utils (= 1.3.0)
+  faker (>= 2.19.0)
+  lerolero_generator
+
+BUNDLED WITH
+   2.3.6
