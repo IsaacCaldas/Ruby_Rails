@@ -1,12 +1,8 @@
-<h1>Welcome!</h1>
-<p>Today is <%= data_us(Date.today)%> </p>
-<p>Hello Isaac!</p>
+<%= render "header" %>
 
-<ul>
-    <li>
-        <%= link_to "Coins register", coins_path %>
-    </li>
-</ul>
+<p>You are in <strong><%= Rails.env %></strong> environment.</p>
+<p>Welcome <strong><%= @my_name %></strong>.</p>
+<p>You learning in this course the <strong><%= @course %></strong>.</p>
 
 <!--
 <p>1 + 1 = <%= 1 + 1 %></p>
