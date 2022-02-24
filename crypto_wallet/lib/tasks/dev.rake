@@ -10,7 +10,7 @@ namespace :dev do
       show_spinner("Migrating database", "Migrated database") { %x(rails db:migrate) }
       
       puts "Seeding database..."
-      show_spinner("Seeding database", "Database seeded") { %x(rails dev:add_coins dev:add_mining_types) }
+      show_spinner("Seeding database", "Database seeded") { %x(rails dev:add_mining_types dev:add_coins) }
 
       puts ""
       spinner = TTY::Spinner.new("[:spinner] Finishing tasks...")
@@ -30,27 +30,32 @@ namespace :dev do
         {
           description: "Bitcoin",
           acronym: "BTC",
-          url_image: "https://bitcoin.org/img/icons/opengraph.png?1644775669"
+          url_image: "https://bitcoin.org/img/icons/opengraph.png?1644775669",
+          mining_type: MiningType.where(acronym: 'PoW')
         },
         {
           description: "Ethereum",
           acronym: "ETH",
-          url_image: "https://seeklogo.com/images/E/ethereum-logo-DE26DD608D-seeklogo.com.png"
+          url_image: "https://seeklogo.com/images/E/ethereum-logo-DE26DD608D-seeklogo.com.png",
+          mining_type: MiningType.all.sample
         },
         {
           description: "Iota",
           acronym: "IOT",
-          url_image: "https://s2.coinmarketcap.com/static/img/coins/200x200/1720.png"
+          url_image: "https://s2.coinmarketcap.com/static/img/coins/200x200/1720.png",
+          mining_type: MiningType.all.sample
         },
         {
           description: "ZCash",
           acronym: "ZEC",
-          url_image: "https://s2.coinmarketcap.com/static/img/coins/200x200/1437.png"
+          url_image: "https://s2.coinmarketcap.com/static/img/coins/200x200/1437.png",
+          mining_type: MiningType.all.sample
         },
         {
           description: "Cardano",
           acronym: "ADA",
-          url_image: "https://coins.com.br/img/criptos/ada.png"
+          url_image: "https://coins.com.br/img/criptos/ada.png",
+          mining_type: MiningType.all.sample
         }
       ]
 
