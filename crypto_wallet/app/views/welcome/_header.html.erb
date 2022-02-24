@@ -1,7 +1,9 @@
+<p><%= link_to 'English', root_path(locale: 'en') %></p>
+<p><%= link_to 'Português do Brasil', root_path(locale: 'pt-BR') %></p>
 <h1>Welcome!</h1>
 <h2><%= cookies[:course] %></h2>
 <h2><%= session[:course] %></h2>
-<p>Language: <b><%= I18n.t('actual_locale') %></b>.</p>
+<p>Language: <b><%= t('actual_locale') %></b>.</p>
 <p>Today is <%= data_us(Date.today)%> </p>
 <p>Hello Isaac!</p>
 <ul>
