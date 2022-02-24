@@ -1,8 +1,9 @@
 <h1>Welcome!</h1>
+<h2><%= cookies[:course] %></h2>
+<h2><%= session[:course] %></h2>
 <p>Language: <b><%= I18n.t('actual_locale') %></b>.</p>
 <p>Today is <%= data_us(Date.today)%> </p>
 <p>Hello Isaac!</p>
-
 <ul>
   <li>
     <%= link_to "Coins", coins_path %>
