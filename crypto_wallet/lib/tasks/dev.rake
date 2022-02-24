@@ -8,8 +8,9 @@ namespace :dev do
       show_spinner("Creating database", "Created database") { %x(rails db:create) }
 
       show_spinner("Migrating database", "Migrated database") { %x(rails db:migrate) }
-
-      show_spinner("Seeding database", "Database seeded") { %x(rails db:seed) }
+      
+      puts "Seeding database..."
+      show_spinner("Seeding database", "Database seeded") { %x(rails dev:add_coins dev:add_mining_types) }
 
       puts ""
       spinner = TTY::Spinner.new("[:spinner] Finishing tasks...")
@@ -19,6 +20,75 @@ namespace :dev do
       puts "You are not in DEVELOPMENT environment."
     end
   end
+  
+  desc "Coins register"
+  task add_coins: :environment do
+    
+    show_spinner("    Registering coins", "Coins registered") do
+
+      coins = [
+        {
+          description: "Bitcoin",
+          acronym: "BTC",
+          url_image: "https://bitcoin.org/img/icons/opengraph.png?1644775669"
+        },
+        {
+          description: "Ethereum",
+          acronym: "ETH",
+          url_image: "https://seeklogo.com/images/E/ethereum-logo-DE26DD608D-seeklogo.com.png"
+        },
+        {
+          description: "Iota",
+          acronym: "IOT",
+          url_image: "https://s2.coinmarketcap.com/static/img/coins/200x200/1720.png"
+        },
+        {
+          description: "ZCash",
+          acronym: "ZEC",
+          url_image: "https://s2.coinmarketcap.com/static/img/coins/200x200/1437.png"
+        },
+        {
+          description: "Cardano",
+          acronym: "ADA",
+          url_image: "https://coins.com.br/img/criptos/ada.png"
+        }
+      ]
+
+      coins.each do |coin|
+        Coin.find_or_create_by!(coin)
+      end
+
+    end
+  end
+
+  desc "Mining types register"
+  task add_mining_types: :environment do
+  
+    show_spinner("    Registering mining types", "Mining types registered") do
+
+      mining_types = [
+        {
+          description: "Proof of Work",
+          acronym: "PoW"
+        },
+        {
+          description: "Proof of Stake",
+          acronym: "PoS"
+        },
+        {
+          description: "Proof of Capacity",
+          acronym: "PoC"
+        }
+      ]
+
+      mining_types.each do |mining_type|
+        MiningType.find_or_create_by!(mining_type)
+      end
+    end
+  end
+
+  
+  private
 
   def show_spinner(msg_start, msg_end)
     spinner = TTY::Spinner.new("[:spinner] #{msg_start}... ")
@@ -26,5 +96,6 @@ namespace :dev do
     yield
     spinner.success("(#{msg_end})")
   end
+
 
 end
