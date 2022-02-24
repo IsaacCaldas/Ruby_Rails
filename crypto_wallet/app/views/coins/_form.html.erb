@@ -15,17 +15,24 @@
     <%= form.label :description, style: "display: block" %>
     <%= form.text_field :description %>
   </div>
+  <br />
 
   <div>
     <%= form.label :acronym, style: "display: block" %>
     <%= form.text_field :acronym %>
   </div>
+  <br />
 
   <div>
     <%= form.label :url_image, style: "display: block" %>
     <%= form.text_field :url_image %>
   </div>
-
+  <br/>
+  <div>
+    <%= form.label :mining_type_id, style: "display: block" %>
+    <%= form.select("mining_type_id", MiningType.all.collect { |type| [type.description, type.id]}, {include_blank: "Select a mining type"}) %>
+  </div>
+  <br />
   <div>
     <%= form.submit %>
   </div>
