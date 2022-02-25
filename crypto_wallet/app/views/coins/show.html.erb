@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-<%= render @coin %>
+<p>
+  <strong>Description:</strong>
+  <%= @coin.description %>
+</p>
 
-<div>
-  <%= link_to t('links.edit'), edit_coin_path(@coin) %> |
-  <%= link_to t('links.back'), coins_path %>
+<p>
+  <strong>Acronym:</strong>
+  <%= @coin.acronym %>
+</p>
 
-  <%= button_to t('links.delete'), @coin, method: :delete %>
-</div>
+<p>
+  <strong>Url image:</strong>
+  <%= @coin.url_image %>
+</p>
+
+
+<p>
+  <strong>MiningType:</strong>
+  <%= @coin.mining_type_id %>
+</p>
+
+<%= link_to t('links.edit'), edit_coin_path(@coin) %> |
+<%= link_to t('links.back'), coins_path %>

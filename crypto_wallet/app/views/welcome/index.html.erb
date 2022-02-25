@@ -1,8 +1,8 @@
 <%= render "header" %>
 <p> <%= I18n.t('hello') %> </p>
 
-<p>You are in <strong><%= Rails.env %></strong> environment.</p>
-<p>Welcome <strong><%= @my_name %></strong>.</p>
+<p>You are in <strong><%= environment %></strong> environment.</p>
+<p><%= I18n.t('welcome') %> <b>Isaac</b><!-- Coloque em params /?name=Isaac<strong> <%= @my_name %></strong> -->.</p>
 <p>You learning in this course the <strong><%= @course %></strong>.</p>
 
 <!--

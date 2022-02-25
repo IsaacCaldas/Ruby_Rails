@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class CoinsControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +16,7 @@ class CoinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create coin" do
-    assert_difference("Coin.count") do
+    assert_difference('Coin.count') do
       post coins_url, params: { coin: { acronym: @coin.acronym, description: @coin.description, url_image: @coin.url_image } }
     end
 
@@ -39,7 +39,7 @@ class CoinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy coin" do
-    assert_difference("Coin.count", -1) do
+    assert_difference('Coin.count', -1) do
       delete coin_url(@coin)
     end
 

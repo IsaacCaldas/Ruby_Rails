@@ -6,3 +6,4 @@ class WelcomeController < ApplicationController
     @course = "Ruby on Rails"
   end
 end
+

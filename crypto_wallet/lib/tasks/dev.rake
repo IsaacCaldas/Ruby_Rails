@@ -31,7 +31,7 @@ namespace :dev do
           description: "Bitcoin",
           acronym: "BTC",
           url_image: "https://bitcoin.org/img/icons/opengraph.png?1644775669",
-          mining_type: MiningType.where(acronym: 'PoW')
+          mining_type: MiningType.find_by(acronym: 'PoW')
         },
         {
           description: "Ethereum",
@@ -69,7 +69,7 @@ namespace :dev do
   desc "Mining types register"
   task add_mining_types: :environment do
   
-    show_spinner("    Registering mining types", "Mining types registered") do
+    show_spinner("    Registering mining types", "Mining types registered") do 
 
       mining_types = [
         {
@@ -90,8 +90,7 @@ namespace :dev do
         MiningType.find_or_create_by!(mining_type)
       end
     end
-  end
-
+  end 
   
   private
 

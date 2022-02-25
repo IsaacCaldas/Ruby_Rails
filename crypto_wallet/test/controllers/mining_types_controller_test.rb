@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class MiningTypesControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,7 +16,7 @@ class MiningTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create mining_type" do
-    assert_difference("MiningType.count") do
+    assert_difference('MiningType.count') do
       post mining_types_url, params: { mining_type: { acronym: @mining_type.acronym, description: @mining_type.description } }
     end
 
@@ -39,7 +39,7 @@ class MiningTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy mining_type" do
-    assert_difference("MiningType.count", -1) do
+    assert_difference('MiningType.count', -1) do
       delete mining_type_url(@mining_type)
     end
 

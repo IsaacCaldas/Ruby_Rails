@@ -7,12 +7,12 @@ class MiningTypesTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit mining_types_url
-    assert_selector "h1", text: "Mining types"
+    assert_selector "h1", text: "Mining Types"
   end
 
-  test "should create mining type" do
+  test "creating a Mining type" do
     visit mining_types_url
-    click_on "New mining type"
+    click_on "New Mining Type"
 
     fill_in "Acronym", with: @mining_type.acronym
     fill_in "Description", with: @mining_type.description
@@ -22,9 +22,9 @@ class MiningTypesTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "should update Mining type" do
-    visit mining_type_url(@mining_type)
-    click_on "Edit this mining type", match: :first
+  test "updating a Mining type" do
+    visit mining_types_url
+    click_on "Edit", match: :first
 
     fill_in "Acronym", with: @mining_type.acronym
     fill_in "Description", with: @mining_type.description
@@ -34,9 +34,11 @@ class MiningTypesTest < ApplicationSystemTestCase
     click_on "Back"
   end
 
-  test "should destroy Mining type" do
-    visit mining_type_url(@mining_type)
-    click_on "Destroy this mining type", match: :first
+  test "destroying a Mining type" do
+    visit mining_types_url
+    page.accept_confirm do
+      click_on "Destroy", match: :first
+    end
 
     assert_text "Mining type was successfully destroyed"
   end

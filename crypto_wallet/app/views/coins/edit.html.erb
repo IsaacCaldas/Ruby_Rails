@@ -1,10 +1,6 @@
-<h1>Editing coin</h1>
+<h1>Editing Coin</h1>
 
-<%= render "form", coin: @coin %>
+<%= render 'form', coin: @coin %>
 
-<br>
-
-<div>
-  <%= link_to t('links.show'), @coin %> |
-  <%= link_to t('links.back'), coins_path %>
-</div>
+<%= link_to t('links.show'), @coin %> |
+<%= link_to t('links.back'), coins_path %>
