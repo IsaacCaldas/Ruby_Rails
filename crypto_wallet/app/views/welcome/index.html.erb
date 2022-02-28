@@ -1,9 +1,23 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= I18n.t('welcome') %>!</h1>
+  <p class="lead"><%= I18n.t('welcome-p') %>.</p>
+  <hr class="my-4">
+  <p> <%= I18n.t('btn-p') %>.</p>
+  <p class="lead">
+    <%= link_to t('activerecord.models.coin.one'), coins_path, class:"btn btn-primary btn-lg" %>
+    <%= link_to t('activerecord.models.mining_type.one'), mining_types_path,  class:"btn btn-primary btn-lg" %>
+  </p>
+</div>
 <%= render "header" %>
+
+
+<!--
 <p> <%= I18n.t('hello') %> </p>
 
 <p>You are in <strong><%= environment %></strong> environment.</p>
-<p><%= I18n.t('welcome') %> <b>Isaac</b><!-- Coloque em params /?name=Isaac<strong> <%= @my_name %></strong> -->.</p>
-<p>You learning in this course the <strong><%= @course %></strong>.</p>
+<p><%= I18n.t('welcome') %> <b>Isaac</b><!-- Coloque em params /?name=Isaac<strong> <%= @my_name %></strong> 
+.</p>
+<p>You learning in this course the <strong><%= @course %></strong>.</p> -->
 
 <!--
 <p>1 + 1 = <%= 1 + 1 %></p>

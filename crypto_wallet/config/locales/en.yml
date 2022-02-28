@@ -2,10 +2,19 @@ en:
   actual_locale: "English-US"
   hello: "Hello world!"
   welcome: "Welcome"
+  welcome-p: "This is a crypto wallet for you to acquire and monitor your cryptocoins"
+  btn-p: "Get started, select one of the options below"
   links: 
     new: "New"
     edit: "Edit"
     show: "Show"
     delete: "Delete"
     back: "Back"
+    new: 
+      coin: "New coin"
+      mining_type: "New mining type"
+    edit: 
+      coin: "Edit coin"
+      mining_type: "Edit mining type"
+    confirm: "Are you sure?"
 

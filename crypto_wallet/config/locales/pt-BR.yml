@@ -2,8 +2,17 @@ pt-BR:
   actual_locale: "Português do Brasil"
   hello: "Olá mundo!"
   welcome: "Seja bem vindo"
+  welcome-p: "Este é uma carteira digital, um aplicativo para você cadastrar e monitorar suas criptomoedas"
+  btn-p: "Para começar, selecione uma das opções abaixo"
   links:
     edit: "Editar"
     show: "Mostrar"
     delete: "Apagar"
     back: "Voltar"
+    new: 
+      coin: "Nova moeda"
+      mining_type: "Novo tipo de mineração"
+    editing: 
+      coin: "Editar moeda"
+      mining_type: "Editar tipo de mineração"
+    confirm: "Tem certeza?"
